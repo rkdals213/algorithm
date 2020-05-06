@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BACK_11967_G4_불켜기 {
+public class BAEK_11967_G4_불켜기 {
 	static int N,M;
 	static int [][] dir4 = {{1,0},{-1,0},{0,1},{0,-1}};
 	static List<Integer> [] gr;
