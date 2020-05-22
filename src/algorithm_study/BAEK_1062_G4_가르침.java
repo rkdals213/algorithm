@@ -27,7 +27,7 @@ public class BAEK_1062_G4_가르침 {
 		System.out.println(result);
 	}
 	
-	static int makeBitMask(String k) {
+	static int makeBitMask(String k) {  // 문자열을 인트형태로 바꾸는 비트마스킹8ㅓ-
 		int res = 0;
 		int len = k.length();
 		for (int i = 0; i < len; i++) {
