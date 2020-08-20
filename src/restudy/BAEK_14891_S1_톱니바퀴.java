@@ -3,7 +3,6 @@ package restudy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class BAEK_14891_S1_톱니바퀴 {
