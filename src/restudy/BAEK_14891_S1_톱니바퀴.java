@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 public class BAEK_14891_S1_톱니바퀴 {
     static int[][] map = new int[4][8];
     static int N;
-    static boolean [] visited;
+    static boolean[] visited;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,9 +26,9 @@ public class BAEK_14891_S1_톱니바퀴 {
             int line = Integer.parseInt(temp.nextToken()) - 1;
             int dir = Integer.parseInt(temp.nextToken());
 
-            visited = new boolean [4];
+            visited = new boolean[4];
 
-            if(dir < 0) turnLeft(line);
+            if (dir < 0) turnLeft(line);
             else turnRight(line);
         }
         int result = 0;
@@ -38,27 +38,27 @@ public class BAEK_14891_S1_톱니바퀴 {
         System.out.println(result);
     }
 
-    static void turnLeft(int line){
-        if(visited[line]) return;
+    static void turnLeft(int line) {
+        if (visited[line]) return;
         visited[line] = true;
-        if(line < 3 && map[line][2] != map[line+1][6]) turnRight(line+1);
-        if(line > 0 && map[line][6] != map[line-1][2]) turnRight(line-1);
+        if (line < 3 && map[line][2] != map[line + 1][6]) turnRight(line + 1);
+        if (line > 0 && map[line][6] != map[line - 1][2]) turnRight(line - 1);
         int temp = map[line][0];
         for (int i = 0; i < 7; i++) {
-            map[line][i] = map[line][i+1];
+            map[line][i] = map[line][i + 1];
         }
         map[line][7] = temp;
 
     }
 
-    static void turnRight(int line){
-        if(visited[line]) return;
+    static void turnRight(int line) {
+        if (visited[line]) return;
         visited[line] = true;
-        if(line < 3 && map[line][2] != map[line+1][6]) turnLeft(line+1);
-        if(line > 0 && map[line][6] != map[line-1][2]) turnLeft(line-1);
+        if (line < 3 && map[line][2] != map[line + 1][6]) turnLeft(line + 1);
+        if (line > 0 && map[line][6] != map[line - 1][2]) turnLeft(line - 1);
         int temp = map[line][7];
         for (int i = 7; i > 0; i--) {
-            map[line][i] = map[line][i-1];
+            map[line][i] = map[line][i - 1];
         }
         map[line][0] = temp;
     }
