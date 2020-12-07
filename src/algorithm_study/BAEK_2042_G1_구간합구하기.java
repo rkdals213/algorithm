@@ -1,7 +1,5 @@
 package algorithm_study;
 
-import algo_basic.day08.Tree;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -75,12 +73,11 @@ public class BAEK_2042_G1_구간합구하기 {
         if (left <= start && end <= right) {
             return tree[node];
         }
-        if(left > end || start > right)
+        if (left > end || start > right)
             return 0;
 
         int mid = (start + end) / 2;
 
         return sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left, right);
     }
-
 }
