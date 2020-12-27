@@ -7,11 +7,16 @@ import java.util.*;
 
 public class BAEK_1963_G5_소수경로 {
     static boolean[] visited;
+    static boolean[] primes;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         StringBuilder sb = new StringBuilder();
+        primes = new boolean[10000];
+
+        initPrimes();
+
         for (int i = 0; i < N; i++) {
             StringTokenizer temp = new StringTokenizer(br.readLine());
             int from = Integer.parseInt(temp.nextToken());
@@ -46,7 +51,7 @@ public class BAEK_1963_G5_소수경로 {
                     }
                     if (next >= 1000 && next < 10000 && !visited[next]) {
                         visited[next] = true;
-                        if (isPrime(next)) q.add(new Point(next, now.count + 1));
+                        if (primes[next]) q.add(new Point(next, now.count + 1));
                     }
                 }
             }
@@ -55,13 +60,16 @@ public class BAEK_1963_G5_소수경로 {
         return -1;
     }
 
-    public static boolean isPrime(int num) {
-        if (num < 1000) return false;
-        for (int i = 2; i < num / 2; i++) {
-            if (num % i == 0) return false;
+    public static void initPrimes() {
+        for (int i = 1000; i < 10000; i++) {
+            primes[i] = true;
+            for (int j = 2; j < i/2; j++) {
+                if(i % j == 0) {
+                    primes[i] = false;
+                    break;
+                }
+            }
         }
-
-        return true;
     }
 
     public static class Point {
