@@ -5,32 +5,32 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class P103_Change_FullSearch {
-	private static int[][] coins = {{ 500, 100, 50, 10 },  { 500, 400, 100, 50, 10 } };
-	private static int min;
-	
-	public static void main(String[] args) {
+    private static int[][] coins = {{500, 100, 50, 10}, {500, 400, 100, 50, 10}};
+    private static int min;
+
+    public static void main(String[] args) {
         int price = 1200;
         int money = 2000;
         // 거스름돈을 위한 최소 동전 개수는?
         for (int i = 0; i < coins.length; i++) {
-        	int[] coinSet = coins[i];
+            int[] coinSet = coins[i];
             min = Integer.MAX_VALUE;
-            
+
             // 시작하는 동전의 위치를 바꿔가면서 테스트
             for (int c = 0; c < coinSet.length; c++) {
                 changeMoneyLoop(coinSet, c, money - price, new TreeMap<Integer, Integer>());
             }
-            
+
             System.out.println("for: " + Arrays.toString(coinSet) + "을 썼을 때 최소 동전 개수: " + min);
         }
     }
-/**
- * 
- * @param coinSet	사용할 동전 조합
- * @param from		사용을 시작할 동전의 위치
- * @param target	빼줄돈
- * @param tmap		동전 사용 이력
- */
+
+    /**
+     * @param coinSet 사용할 동전 조합
+     * @param from    사용을 시작할 동전의 위치
+     * @param target  빼줄돈
+     * @param tmap    동전 사용 이력
+     */
     private static void changeMoneyLoop(int[] coinSet, int from, int target, TreeMap<Integer, Integer> tmap) {
         // map 초기화 후
         int coins = 0;
@@ -55,13 +55,11 @@ public class P103_Change_FullSearch {
     }
 
 
-
-	
-	public static void handleMap(Map<Integer, Integer> map, Integer key, Integer val) {
-		if(map.containsKey(key)) {
-			map.put(key, map.get(key) + val);
-		}else {
-			map.put(key, val);
-		}
-	}
+    public static void handleMap(Map<Integer, Integer> map, Integer key, Integer val) {
+        if (map.containsKey(key)) {
+            map.put(key, map.get(key) + val);
+        } else {
+            map.put(key, val);
+        }
+    }
 }

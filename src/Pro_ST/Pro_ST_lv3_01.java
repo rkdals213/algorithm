@@ -16,21 +16,21 @@ public class Pro_ST_lv3_01 {
             q1.add(new Point(jobs[i][0], jobs[i][1]));
         }
 
-        while (!q1.isEmpty()){
+        while (!q1.isEmpty()) {
 //            System.out.println(q.poll().toString());
             PriorityQueue<Point2> temp = new PriorityQueue<>();
-            while (!q1.isEmpty() && q1.peek().x <= answer){
+            while (!q1.isEmpty() && q1.peek().x <= answer) {
                 Point t = q1.poll();
                 temp.add(new Point2(t.x, t.y));
             }
 
-            if(temp.isEmpty()) {
+            if (temp.isEmpty()) {
                 Point t = q1.poll();
                 answer += t.y + answer - t.x;
-            }else{
+            } else {
                 Point2 t = temp.poll();
                 answer += t.y + answer - t.x;
-                while(!temp.isEmpty()){
+                while (!temp.isEmpty()) {
                     Point2 t2 = temp.poll();
                     q1.add(new Point(t2.x, t2.y));
                 }

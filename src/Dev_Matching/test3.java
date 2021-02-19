@@ -59,7 +59,7 @@ public class test3 {
             Point t = new Point(input[result[i]][0], input[result[i]][1]);
             for (int j = 0; j < list.size(); j++) {
                 if (list.get(j).equals(t)) {
-                    if(list.get(j).x <= t.x && list.get(j).y >= t.y) {
+                    if (list.get(j).x <= t.x && list.get(j).y >= t.y) {
                         f = true;
                         break;
                     }

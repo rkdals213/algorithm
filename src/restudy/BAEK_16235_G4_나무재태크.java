@@ -32,8 +32,8 @@ public class BAEK_16235_G4_나무재태크 {
 
         for (int i = 0; i < M; i++) {
             temp = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(temp.nextToken())-1;
-            int y = Integer.parseInt(temp.nextToken())-1;
+            int x = Integer.parseInt(temp.nextToken()) - 1;
+            int y = Integer.parseInt(temp.nextToken()) - 1;
             int z = Integer.parseInt(temp.nextToken());
             Tree t = new Tree(x, y, z);
             q.add(t);
@@ -58,7 +58,7 @@ public class BAEK_16235_G4_나무재태크 {
             Tree t = q.poll();
             if (map1[t.x][t.y] >= t.z) {
                 map1[t.x][t.y] -= t.z;
-                temp.add(new Tree(t.x, t.y, t.z+1));
+                temp.add(new Tree(t.x, t.y, t.z + 1));
             } else {
                 deadTree.add(t);
             }
@@ -77,11 +77,11 @@ public class BAEK_16235_G4_나무재태크 {
         int l = temp.size();
         for (int i = 0; i < l; i++) {
             Tree t = temp.poll();
-            if(t.z % 5 == 0){
+            if (t.z % 5 == 0) {
                 for (int j = 0; j < 8; j++) {
                     int x = t.x + dirs[j][0];
                     int y = t.y + dirs[j][1];
-                    if(isIn(x,y)) q.add(new Tree(x,y,1));
+                    if (isIn(x, y)) q.add(new Tree(x, y, 1));
                 }
             }
             q.add(t);

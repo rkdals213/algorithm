@@ -5,10 +5,10 @@ import java.util.*;
 
 public class Test3 {
     public static void main(String[] args) {
-        int[] a = {1,2,1};
-        int[] b = {2,1,4,4};
-        int[] c = {5,6,7,8,8};
-        int[] d = {5,6,6,6,6,7,8,9,10,11,12,13,14,15,15};
+        int[] a = {1, 2, 1};
+        int[] b = {2, 1, 4, 4};
+        int[] c = {5, 6, 7, 8, 8};
+        int[] d = {5, 6, 6, 6, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 15};
 
         System.out.println(solution(a));
         System.out.println(solution(b));
@@ -23,18 +23,18 @@ public class Test3 {
 
         Arrays.sort(A);
         for (int i = 0; i < A.length; i++) {
-            if(!v[A[i]]) v[A[i]] = true;
+            if (!v[A[i]]) v[A[i]] = true;
             else q.add(A[i]);
         }
 
         for (int i = 1; i < v.length; i++) {
-            if(!v[i]){
+            if (!v[i]) {
                 int t = q.poll();
-                answer += Math.abs(t-i);
+                answer += Math.abs(t - i);
                 v[i] = true;
             }
-            if(q.isEmpty()) break;
-            if(answer > 1000000000) return -1;
+            if (q.isEmpty()) break;
+            if (answer > 1000000000) return -1;
         }
         return answer;
     }

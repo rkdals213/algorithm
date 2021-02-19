@@ -19,8 +19,8 @@ public class BAEK_2252_G2_줄세우기 {
 
         for (int i = 0; i < M; i++) {
             temp = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(temp.nextToken())-1;
-            int b = Integer.parseInt(temp.nextToken())-1;
+            int a = Integer.parseInt(temp.nextToken()) - 1;
+            int b = Integer.parseInt(temp.nextToken()) - 1;
             gr[a].add(b);
             depth[b]++;
         }
@@ -32,15 +32,15 @@ public class BAEK_2252_G2_줄세우기 {
 
         Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < N; i++) {
-            if(depth[i] == 0) q.add(i);
+            if (depth[i] == 0) q.add(i);
         }
         StringBuilder sb = new StringBuilder();
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             int t = q.poll();
-            sb.append(t+1 + " ");
+            sb.append(t + 1 + " ");
             for (int i = 0; i < gr[t].size(); i++) {
                 depth[gr[t].get(i)]--;
-                if(depth[gr[t].get(i)] == 0) q.add(gr[t].get(i));
+                if (depth[gr[t].get(i)] == 0) q.add(gr[t].get(i));
             }
         }
         System.out.println(sb);

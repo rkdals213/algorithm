@@ -20,8 +20,8 @@ public class test1 {
         for (int j = 0; j < numOfGames; j++) {
             k += numOfMovesPerGame[j];
             k = k % (numOfAllPlayers - 1);
-            if(k < 0){
-               k =  numOfAllPlayers + k - 1;
+            if (k < 0) {
+                k = numOfAllPlayers + k - 1;
             }
             if (find(map[k], namesOfQuickPlayers)) cought[now]++;
             else {
@@ -36,11 +36,11 @@ public class test1 {
             System.out.println(map[i] + " " + cought[map[i] - 'A']);
         }
 
-        System.out.println((char)('A'+now) + " " + cought[now]);
+        System.out.println((char) ('A' + now) + " " + cought[now]);
 
     }
 
-    static boolean find(char x, char[] namesOfQuickPlayers){
+    static boolean find(char x, char[] namesOfQuickPlayers) {
         for (int i = 0; i < namesOfQuickPlayers.length; i++) {
             if (x == namesOfQuickPlayers[i]) {
                 return true;

@@ -13,9 +13,9 @@ public class Test3 {
     static int solution(int[] histogram) {
         int answer = 0;
 
-        for (int i = 0; i < histogram.length-2; i++) {
-            for (int j = i+2; j < histogram.length; j++) {
-                int t = (histogram[j] - histogram[i]+1) * Math.min(histogram[i], histogram[j]);
+        for (int i = 0; i < histogram.length - 2; i++) {
+            for (int j = i + 2; j < histogram.length; j++) {
+                int t = (histogram[j] - histogram[i] + 1) * Math.min(histogram[i], histogram[j]);
                 answer = Integer.max(answer, t);
             }
         }

@@ -23,7 +23,7 @@ public class Pro_LV3_가장긴팰린드롬 {
         dp = new int[s.length()][s.length()];
         for (int i = 0; i < s.length(); i++) {
             for (int j = i; j < s.length(); j++) {
-                if(dp[i][j] == 0){
+                if (dp[i][j] == 0) {
                     dp[i][j] = check(i, j, s);
                     answer = Math.max(answer, dp[i][j]);
                 }
@@ -44,9 +44,9 @@ public class Pro_LV3_가장긴팰린드롬 {
         }
 
         if (line.charAt(i) != line.charAt(j)) return dp[i][j] = -1;
-        else{
+        else {
             int temp = check(i + 1, j - 1, line);
-            if(temp < 0) return dp[i][j] = -1;
+            if (temp < 0) return dp[i][j] = -1;
             else return dp[i][j] = temp + 2;
         }
 

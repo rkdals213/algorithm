@@ -6,9 +6,9 @@ import java.util.Map;
 
 public class Test2 {
     public static void main(String[] args) {
-        String[] s = {"abc","bca","dbe"};
-        String[] s1 = {"zzzz","ferz","zdsr","fgtd"};
-        String[] s2 = {"gr","sd","rg"};
+        String[] s = {"abc", "bca", "dbe"};
+        String[] s1 = {"zzzz", "ferz", "zdsr", "fgtd"};
+        String[] s2 = {"gr", "sd", "rg"};
 
         System.out.println(Arrays.toString(solution(s)));
         System.out.println(Arrays.toString(solution(s1)));
@@ -16,15 +16,15 @@ public class Test2 {
     }
 
     static int[] solution(String[] S) {
-        int[] answer = new int [3];
+        int[] answer = new int[3];
         boolean f = false;
 
         for (int i = 0; i < S[0].length(); i++) {
             Map<Character, Integer> map = new HashMap<>();
             for (int j = 0; j < S.length; j++) {
-                if(!map.containsKey(S[j].charAt(i))){
+                if (!map.containsKey(S[j].charAt(i))) {
                     map.put(S[j].charAt(i), j);
-                }else{
+                } else {
                     answer[0] = map.get(S[j].charAt(i));
                     answer[1] = j;
                     answer[2] = i;
@@ -32,7 +32,7 @@ public class Test2 {
                 }
             }
         }
-        if(f) return answer;
+        if (f) return answer;
         int[] no = {};
         return no;
     }

@@ -17,7 +17,7 @@ public class test4 {
 
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < votes.length; i++) {
-            if(map.containsKey(votes[i])) map.replace(votes[i], map.get(votes[i])+1);
+            if (map.containsKey(votes[i])) map.replace(votes[i], map.get(votes[i]) + 1);
             else map.put(votes[i], 1);
         }
 
@@ -33,9 +33,9 @@ public class test4 {
 
         int max = 0;
 
-        while (!q.isEmpty()){
+        while (!q.isEmpty()) {
             Point t = q.poll();
-            if(k > 0){
+            if (k > 0) {
                 max += t.vote;
                 k--;
             }
@@ -44,20 +44,19 @@ public class test4 {
 
         int cnt = 0;
         String last = "";
-        while(true){
+        while (true) {
 
             Point t = dq.removeLast();
-            if(cnt + t.vote < max) {
+            if (cnt + t.vote < max) {
                 last = t.car;
                 cnt += t.vote;
-            }
-            else break;
+            } else break;
         }
 
         return last;
     }
 
-    static class Point implements Comparable<Point>{
+    static class Point implements Comparable<Point> {
         String car;
         int vote;
 
@@ -68,9 +67,9 @@ public class test4 {
 
         @Override
         public int compareTo(Point o) {
-            if(this.vote == o.vote){
+            if (this.vote == o.vote) {
                 return this.car.compareTo(o.car);
-            }else return -Integer.compare(this.vote, o.vote);
+            } else return -Integer.compare(this.vote, o.vote);
         }
 
         @Override

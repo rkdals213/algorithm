@@ -15,10 +15,10 @@ public class Test4 {
     static int solution(int[][] flowers) {
         int answer = 0;
 
-        int [] map = new int [365];
+        int[] map = new int[365];
         for (int i = 0; i < flowers.length; i++) {
             for (int j = flowers[i][0]; j < flowers[i][1]; j++) {
-                if(map[j] > 0) continue;
+                if (map[j] > 0) continue;
                 else map[j]++;
 
                 answer++;

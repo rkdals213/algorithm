@@ -10,7 +10,7 @@ public class BAEK_13458_B2시험감독 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N, B, C;
         N = Integer.parseInt(br.readLine());
-        int [] A = new int [N];
+        int[] A = new int[N];
         long result = 0;
 
         StringTokenizer temp = new StringTokenizer(br.readLine());
@@ -24,9 +24,9 @@ public class BAEK_13458_B2시험감독 {
         for (int i = 0; i < N; i++) {
             A[i] -= B;
             result++;
-            if(A[i] > 0){
-                if(A[i]%C == 0) result += A[i]/C;
-                else result += 1 + A[i]/C;
+            if (A[i] > 0) {
+                if (A[i] % C == 0) result += A[i] / C;
+                else result += 1 + A[i] / C;
             }
         }
 

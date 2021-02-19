@@ -60,7 +60,7 @@ public class BAEK_19238_G4_스타트택시 {
                 q.add(new Taxi(t.x, t.y, t.f, map[t.x][t.y], t.move));
                 map[t.x][t.y] = 0;
                 continue;
-            } else if (t.ride != 0 && goals.containsKey(t.ride) && goals.get(t.ride) == t.x*N + t.y) {
+            } else if (t.ride != 0 && goals.containsKey(t.ride) && goals.get(t.ride) == t.x * N + t.y) {
                 visited = new boolean[N][N];
                 visited[t.x][t.y] = true;
                 q.clear();

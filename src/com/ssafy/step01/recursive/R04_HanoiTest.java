@@ -3,22 +3,23 @@ package com.ssafy.step01.recursive;
 import java.util.Scanner;
 
 public class R04_HanoiTest {
-	static StringBuilder result = new StringBuilder();
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		hanoi(N, 1, 2, 3);
-		System.out.println(result);
-	}
-	
-	private static void hanoi(int cnt, int from, int temp, int to) {// ¿øÆÇ °¹¼ö(¸Ç ¾Æ·¡ ¿øÆÇ ¹øÈ£), ½ÃÀÛ, ÀÓ½Ã, ¸ñÀû ±âµÕ
-		if(cnt==0) return;
-		// ½ÃÀÛ±âµÕÀÇ n-1 µ¢¾î¸® ¿øÆÇÀ» ÀÓ½Ã±âµÕÀ¸·Î ¿Å±è
-		hanoi(cnt-1, from, to, temp);
-		// ½ÃÀÛ±âµÕÀÇ n ¿øÆÇÀ» ¸ñÀû±âµÕÀ¸·Î ¿Å±è
-		result.append(cnt+" : "+from+"->"+to+"\n");
-		// ÀÓ½Ã±âµÕÀÇ n-1 µ¢¾î¸® ¿øÆÇÀ» ¸ñÀû±âµÕÀ¸·Î ¿Å±è
-		hanoi(cnt-1, temp, from, to);
-	}
+    static StringBuilder result = new StringBuilder();
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        hanoi(N, 1, 2, 3);
+        System.out.println(result);
+    }
+
+    private static void hanoi(int cnt, int from, int temp, int to) {// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£), ï¿½ï¿½ï¿½ï¿½, ï¿½Ó½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+        if (cnt == 0) return;
+        // ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½ï¿½ n-1 ï¿½ï¿½ï¿½î¸® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å±ï¿½
+        hanoi(cnt - 1, from, to, temp);
+        // ï¿½ï¿½ï¿½Û±ï¿½ï¿½ï¿½ï¿½ n ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å±ï¿½
+        result.append(cnt + " : " + from + "->" + to + "\n");
+        // ï¿½Ó½Ã±ï¿½ï¿½ï¿½ï¿½ n-1 ï¿½ï¿½ï¿½î¸® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å±ï¿½
+        hanoi(cnt - 1, temp, from, to);
+    }
 
 }

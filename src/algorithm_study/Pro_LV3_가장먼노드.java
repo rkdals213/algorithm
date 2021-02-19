@@ -33,8 +33,7 @@ public class Pro_LV3_가장먼노드 {
         while (!q.isEmpty()) {
             Point t = q.poll();
             List<Integer> nowList = list[t.now];
-            for (int i = 0; i < nowList.size(); i++) {
-                int next = nowList.get(i);
+            for (int next : nowList) {
                 if (!visited[next]) {
                     q.add(new Point(next, t.dis + 1));
                     visited[next] = true;
@@ -53,7 +52,7 @@ public class Pro_LV3_가장먼노드 {
 
     static List<Integer>[] list;
 
-    static boolean visited[];
+    static boolean[] visited;
 
     static class Point {
         int now;

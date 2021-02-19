@@ -1,4 +1,5 @@
 package algorithm_study;
+
 // 아직 덜품
 public class Pro_LV3_N으로표현 {
     public static void main(String[] args) {
@@ -15,15 +16,15 @@ public class Pro_LV3_N으로표현 {
 
     static void go(int cur, int count, int N, int number) {
         if (count > 8) {
-           return;
+            return;
         }
 
-        if(cur < 0) return;
+        if (cur < 0) return;
 
-        if(cur == number){
-           if(answer == -1 || count < answer) {
-               answer = count;
-           }
+        if (cur == number) {
+            if (answer == -1 || count < answer) {
+                answer = count;
+            }
         }
         int temp = N;
         for (int i = 0; i < 8 - count; i++) {
@@ -36,8 +37,8 @@ public class Pro_LV3_N으로표현 {
         }
     }
 
-    static int mulTen(int temp, int N){
-        return temp*10 + N;
+    static int mulTen(int temp, int N) {
+        return temp * 10 + N;
     }
 
 }

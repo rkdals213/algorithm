@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class R01_FactorialTest {
 
-	// n! : n * (n-1)!
-	
-	private static long factorial(int n) {
-		// ±âÀú ÆÄÆ®
-		if(n==1) return 1;
-		// À¯µµ ÆÄÆ®
-		return n * factorial(n-1);
-	}
-	
-	public static void main(String[] args) {
-		Scanner sc =  new Scanner(System.in);
-		int N = sc.nextInt();
-		System.out.println(factorial(N));
+    // n! : n * (n-1)!
 
-	}
+    private static long factorial(int n) {
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®
+        if (n == 1) return 1;
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        System.out.println(factorial(N));
+
+    }
 
 }

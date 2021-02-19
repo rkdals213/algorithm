@@ -1,4 +1,5 @@
 package algorithm_study;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
@@ -8,10 +9,10 @@ public class BAEK_2636_G5_치즈 {
     static int N;
     static int M;
     static int[][] map;
-    static boolean[][] visited;    
+    static boolean[][] visited;
     static int cheese;
     static int time, cheeseCnt;
-    static int [][] dir ={{-1,0},{0,1},{1,0},{0,-1}};
+    static int[][] dir = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
     static class Point {
         int x, y;
@@ -41,7 +42,7 @@ public class BAEK_2636_G5_치즈 {
             }
         }
         while (true) {
-            visited= new boolean[N][M];
+            visited = new boolean[N][M];
             BFS();
             time++;
             boolean flag = true;
@@ -54,7 +55,7 @@ public class BAEK_2636_G5_치즈 {
                     }
                 }
             }
-            if(flag) break;
+            if (flag) break;
 
             cheese = cheeseCnt;
         }
@@ -64,12 +65,12 @@ public class BAEK_2636_G5_치즈 {
     }
 
     public static void BFS() {
-    	Queue<Point> q = new LinkedList<>();
+        Queue<Point> q = new LinkedList<>();
         q.offer(new Point(0, 0));
         while (!q.isEmpty()) {
             Point top = q.poll();
 
-            for(int i =0; i<dir.length;i++){
+            for (int i = 0; i < dir.length; i++) {
                 int x = top.x + dir[i][0];
                 int y = top.y + dir[i][1];
                 if (x >= 0 && x < N && y >= 0 && y < M && !visited[x][y]) {
