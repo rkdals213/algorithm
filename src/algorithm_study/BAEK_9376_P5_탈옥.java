@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
@@ -48,7 +47,7 @@ public class BAEK_9376_P5_탈옥 {
                 }
             }
 
-            findprisoner();
+            findPrisoner();
             for (int j = 0; j < list.size(); j++) {
                 BFS(list.get(j).i, list.get(j).j, j + 1);
             }
@@ -58,9 +57,11 @@ public class BAEK_9376_P5_탈옥 {
                 for (int k = 1; k < M + 1; k++) {
                     if (map[j][k] != '*') {
                         if (map[j][k] == '#') {
-                            sum = Math.min(sum, visited[j][k][0] + visited[j][k][1] + visited[j][k][2] - 2);
+                            if (visited[j][k][0] != -1 && visited[j][k][1] != -1 && visited[j][k][2] != -1)
+                                sum = Math.min(sum, visited[j][k][0] + visited[j][k][1] + visited[j][k][2] - 2);
                         } else {
-                            sum = Math.min(sum, visited[j][k][0] + visited[j][k][1] + visited[j][k][2]);
+                            if (visited[j][k][0] != -1 && visited[j][k][1] != -1 && visited[j][k][2] != -1)
+                                sum = Math.min(sum, visited[j][k][0] + visited[j][k][1] + visited[j][k][2]);
                         }
 
                     }
@@ -72,7 +73,7 @@ public class BAEK_9376_P5_탈옥 {
 
     }
 
-    static void findprisoner() {
+    static void findPrisoner() {
         int num = 0;
         for (int i = 0; i < N + 2; i++) {
             for (int j = 0; j < M + 2; j++) {
