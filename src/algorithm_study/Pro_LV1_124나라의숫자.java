@@ -2,7 +2,7 @@ package algorithm_study;
 
 public class Pro_LV1_124나라의숫자 {
     public static void main(String[] args) {
-        for (int i = 1; i < 10; i++) {
+        for (int i = 10; i < 11; i++) {
             System.out.println(i + " : " + solution(i));
         }
     }
