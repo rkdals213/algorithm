@@ -61,14 +61,5 @@ public class BAEK_1713_S2_후보추천하기 {
             if (this.c == o.c) return Integer.compare(this.t, o.t);
             return Integer.compare(this.c, o.c);
         }
-
-        @Override
-        public String toString() {
-            return "Point{" +
-                    "n=" + n +
-                    ", c=" + c +
-                    ", t=" + t +
-                    '}';
-        }
     }
 }
