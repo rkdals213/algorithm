@@ -18,9 +18,6 @@ public class BAEK_2428_S3_표절 {
         }
         list.sort(Integer::compareTo);
 
-        System.out.println(list);
-        System.out.println(3 * 0.9);
-
         Queue<Integer> q = new LinkedList<>();
         for (int t : list) {
             if (!q.isEmpty()) {
