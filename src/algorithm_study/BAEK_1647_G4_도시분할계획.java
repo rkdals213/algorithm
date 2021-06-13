@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class BAEK_G4_1647_도시분할계획 {
+public class BAEK_1647_G4_도시분할계획 {
     static int N;
     static int M;
     static int[][] edges;
