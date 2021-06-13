@@ -46,6 +46,7 @@ public class BAEK_1922_G4_네트워크연결 {
         }
 
         System.out.println(total);
+        System.out.println(Arrays.toString(rank));
     }
 
     static public void initParent() {
@@ -66,9 +67,11 @@ public class BAEK_1922_G4_네트워크연결 {
         if (rank[px] > rank[py]) {
             parent[py] = px;
             rank[py] += rank[px];
+            rank[py]++;
         } else {
             parent[px] = py;
             rank[px] += rank[py];
+            rank[px]++;
         }
     }
 }
