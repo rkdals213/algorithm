@@ -14,39 +14,44 @@ public class BAEK_6497_G4_전력난 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer temp = new StringTokenizer(br.readLine());
-        V = Integer.parseInt(temp.nextToken());
-        E = Integer.parseInt(temp.nextToken());
-        map = new int[E][3];
-        parent = new int[V+1];
-        int total = 0;
-        for (int i = 0; i < E; i++) {
-            temp = new StringTokenizer(br.readLine());
-            map[i][0] = Integer.parseInt(temp.nextToken());
-            map[i][1] = Integer.parseInt(temp.nextToken());
-            map[i][2] = Integer.parseInt(temp.nextToken());
-            total += map[i][2];
-        }
+        StringBuilder sb = new StringBuilder();
+        while (true) {
+            StringTokenizer temp = new StringTokenizer(br.readLine());
+            V = Integer.parseInt(temp.nextToken());
+            E = Integer.parseInt(temp.nextToken());
+            if (V == 0 && E == 0) break;
 
-        Arrays.sort(map, Comparator.comparingInt(o -> o[2]));
-        initParent();
-        int cnt = 0;
-
-        int sum = 0;
-        for (int i = 0; i < E; i++) {
-            if (cnt == V - 1) break;
-            int a = find(map[i][0]);
-            int b = find(map[i][1]);
-
-            if (a != b) {
-                union(a, b);
-                sum += map[i][2];
-                cnt++;
+            map = new int[E][3];
+            parent = new int[V+1];
+            int total = 0;
+            for (int i = 0; i < E; i++) {
+                temp = new StringTokenizer(br.readLine());
+                map[i][0] = Integer.parseInt(temp.nextToken());
+                map[i][1] = Integer.parseInt(temp.nextToken());
+                map[i][2] = Integer.parseInt(temp.nextToken());
+                total += map[i][2];
             }
+
+            Arrays.sort(map, Comparator.comparingInt(o -> o[2]));
+            initParent();
+            int cnt = 0;
+
+            int sum = 0;
+            for (int i = 0; i < E; i++) {
+                if (cnt == V - 1) break;
+                int a = find(map[i][0]);
+                int b = find(map[i][1]);
+
+                if (a != b) {
+                    union(a, b);
+                    sum += map[i][2];
+                    cnt++;
+                }
+            }
+
+            sb.append(total - sum).append("\n");
         }
-
-        System.out.println(total - sum);
-
+        System.out.println(sb);
     }
 
     static private void initParent() {
